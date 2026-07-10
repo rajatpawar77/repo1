@@ -1,0 +1,34 @@
+Task 3
+Evaluating and Selecting the Optimal LLM for 
+Production (Estimated Time: 20 mins)
+Objective: Systematically evaluate different LLMs using your fully refined prompt template. 
+Based on this evaluation, you can configure your solution to use the optimal model for 
+production deployment.
+Task 3.1: Perform Comparative Model Evaluation and Selection
+Using your template (feedback-analyzer-CERT#### version 2.0.0), run the following sample 
+customer feedback messages three times each time using a different LLM model available in 
+the generative AI hub (e.g., GPT-4o Mistral AI, Gemini)
+Note:
+In case a particular model is not working or is not available, select another model 
+and continue. Your result will not be impacted by unavailability of a particular 
+model.
+Feedback Message (Delivery Problem - Neutral/Negative):
+Subject: Delivery confusion for order #GGX33445
+My order #GGX33445 (a "Premium Coffee Maker") was marked as delivered 
+two days ago, but I haven't received it. My neighbor also didn't get 
+it. The tracking link just says "delivered." Can you please 
+investigate with the shipping company and give me an update?
+1. After executing your prompt with each model, carefully review the generated JSON output 
+for accuracy, completeness, and adherence to the specified format to ensure the most 
+accurate customer feedback analysis. Pay close attention to Main_Category, 
+Customer_Sentiment, Suggested_Department, and Actionable_Resolution_Points.
+2. To do this, run your template with each model for the given Feedback Message and review 
+the JSON output. Repeat the same for the next model.
+3. After comparing the results decide which LLM performs best with your current setup.
+4. Copy the JSON output for your selected model using Feedback Message and save it to the 
+Assistant role of your feedback-analyzer-CERT#### template to new version 2.2.0. Add 
+the “Optimal Model Output" text on the top of the saved response . This text is important 
+to track your results.
+Expected outcome:
+The updated prompt template with a similar name feedback-analyzer-CERT####, and a new 
+version 2.2.0 with an additional Assistant role based on the above instructions
