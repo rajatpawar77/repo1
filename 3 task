@@ -32,3 +32,85 @@ to track your results.
 Expected outcome:
 The updated prompt template with a similar name feedback-analyzer-CERT####, and a new 
 version 2.2.0 with an additional Assistant role based on the above instructions
+
+
+==========================================================
+
+
+
+This task is mainly about using multiple models and choosing the best one. There is no single correct model—the evaluator checks that you performed the comparison and saved the selected output.
+
+Step 1: Open Your Template
+
+Open:
+
+feedback-analyzer-CERT####
+
+Version:
+
+Important: Delete any existing Assistant role before running the prompt.
+
+Step 2: Test with Three Different Models
+
+Choose any three models available in your SAP Generative AI Hub, for example:
+
+GPT-4o
+Gemini 2.5 Pro (or another available Gemini model)
+Mistral Large (or another available Mistral model)
+
+If one of these isn't available, use another available model (for example, Claude).
+
+Step 3: Use This Input
+
+Paste the following into user_email_placeholder:
+
+Run it with Model 1.
+
+Then switch to Model 2 and run the same prompt.
+
+Then switch to Model 3 and run it again.
+
+Step 4: Compare the Outputs
+
+Check whether each model correctly identifies:
+
+Field	Expected Value
+Main_Category	Delivery Problem
+Customer_Sentiment	Negative (Neutral is acceptable if justified, but Negative is stronger here)
+Order_Reference_ID	#GGX33445
+Product_Reference	Premium Coffee Maker
+Suggested_Department	Logistics
+Actionable_Resolution_Points	Investigate shipment, contact shipping company, provide delivery update
+
+The best model is the one that:
+
+Produces valid JSON only.
+Correctly classifies the issue.
+Extracts all required details.
+Provides clear and relevant Actionable_Resolution_Points.
+Step 5: Example of an Optimal Output
+
+Your chosen model's response should look similar to this:
+
+Step 6: Create Version 2.2.0
+Click Save As New Version.
+
+Set the version to:
+
+Add an Assistant role.
+At the very top of the Assistant content, add:
+Below that, paste the JSON output from the model you selected.
+
+The Assistant role should look like:
+
+Final Checklist for Task 3
+✅ Opened version 2.0.0.
+✅ Removed the previous Assistant role before testing.
+✅ Ran the same prompt with three different LLMs.
+✅ Compared the outputs for accuracy and completeness.
+✅ Selected the best-performing model.
+✅ Created version 2.2.0.
+✅ Added an Assistant role beginning with "Optimal Model Output", followed by the selected JSON.
+✅ Saved the template.
+
+This completes Task 3.1 according to the certification instructions.
