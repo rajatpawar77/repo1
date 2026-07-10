@@ -123,3 +123,96 @@ try using another model to execute the prompt.
 Expected outcome: The updated prompt template with a similar name feedback-analyzer
 CERT####, and a new version 1.2.0 with an additional Assistant role, based on the above 
 instructions
+
+
+
+
+===================================================
+
+
+
+Absolutely. I can help you complete the entire certification practical step by step. We'll do it exactly as the evaluator expects.
+
+Step 1: Open SAP Generative AI Hub
+Log in to SAP AI Launchpad.
+Open Generative AI Hub.
+Go to Orchestration.
+Create a New Prompt Template.
+Step 2: Create Version 1.0.0
+Template Name
+
+Replace CERT#### with your own ID.
+
+Example:
+
+Version:
+
+System Role
+
+Paste this exactly.
+
+User Role
+Variable
+
+Create one variable.
+
+Name
+
+Type
+
+Save.
+
+Step 3: Create Version 1.1.0
+
+Click Save As New Version
+
+Version
+
+Now append this at the end of the System Prompt.
+
+Save.
+
+Step 4: Run the Prompt
+
+Choose any available model.
+
+For example
+
+Claude
+GPT-4.1
+GPT-4o
+Llama 3
+
+(any working model is acceptable)
+
+Paste this into user_email_placeholder
+
+Click Run.
+
+You should receive something like
+
+Copy it.
+
+Step 5: Create Version 1.2.0
+
+Click Save As New Version
+
+Version
+
+Add a new Assistant role.
+
+Paste the JSON you received into the Assistant role exactly (or use the sample above if your output is essentially the same).
+
+Save.
+
+Checklist for Unit 1
+✅ Template name includes CERT####
+✅ Version 1.0.0
+✅ System role
+✅ User role
+✅ Variable user_email_placeholder
+✅ JSON-only output schema
+✅ Version 1.1.0 with IMPORTANT hardening section
+✅ Prompt executed successfully
+✅ Assistant role added
+✅ Version 1.2.0 saved
