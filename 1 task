@@ -1,0 +1,125 @@
+Context
+Scenario
+A large online retailer struggles to manually process and analyze thousands of daily customer 
+emails about various issues like product defects, delivery delays, and return requests. This 
+manual approach is inefficient, inconsistent, and results in customer dissatisfaction.
+Your task is to design, develop, and iteratively refine an AI solution using the SAP’s generative 
+AI hub. The solution should extract essential insights for fast routing, proactive problem
+solving, and ongoing service enhancement.
+This scenario consists of four parts. The estimated duration to finish the parts in minutes is 
+added in parentheses. We recommend that you complete the parts in the following sequence.
+1. Designing an Initial Prompt and Structuring for Core Feedback Insights (25m)
+2. Refining Accuracy and Adding Semantic Depth for Problem Resolution (20m)
+3. Evaluating and Selecting the Optimal LLM for Production (20m)
+4. Creating an Advanced Multi-Issue Extraction & Prioritization Template (25m)
+Deliverables
+Your submission will consist of specific, versioned prompt templates, configured 
+orchestration workflows, and traceable outputs demonstrating your problem-solving process 
+and implementation. You will also be required to save specific AI responses directly into the 
+Assistant role of your prompt template for tracking your solution’s evolution. Save all your 
+templates in the orchestration scenario.
+Sample message for testing your prompts
+Sample messages are provided at the end of this document. You can use these messages to 
+develop your prompts as suggested in the tasks below.
+© Copyright. All rights reserved.
+2
+Unit 1
+Task 1
+Designing an Initial Prompt and Structuring for 
+Core Feedback Insights (Estimated Time: 25 
+minutes)
+Objective
+Develop a foundational prompt template that accurately extracts essential customer 
+feedback details into a structured JSON format, ready for immediate departmental routing.
+Task 1.1: Design and Implement the Base Prompt (Prompt Template Version 1.0.0)
+The customer service, product, and logistics teams need a quick, standardized way to 
+understand the core of a customer’s message. Create a new prompt template named 
+feedback-analyzer-CERT####, version 1.0.0 in SAP’s generative AI hub to identify the main 
+issue, sentiment, and any referenced product or order details.
+1. Define appropriate System and User roles.
+2. The System role must clearly state the LLM’s primary task (customer feedback analysis) 
+and the desired output schema.
+3. The User role should contain instructions for processing the input message.
+4. Add a variable user_email_placeholder where you will provide the input message.
+5. The output MUST be a JSON object containing the following keys:
+a. Feedback_ID: string (e.g., AUTO-FEED-001)
+b. Main_Category: enum (e.g., Product Issue, Delivery Problem, Return/Refund, General 
+Inquiry, Website/App Issue, Account Issue)
+c. Customer_Sentiment: enum (Very Negative, Negative, Neutral, Positive, Very Positive)
+d. Issue_Summary: string (concise summary, max 100 words)
+e. Order_Reference_ID: string (e.g., #GGX12345, N/A if not present)
+f. Product_Reference: string (e.g., “Smartwatch Model X”, N/A if not present)
+g. Suggested_Department: enum (Customer Service, Product Team, Logistics, Returns 
+Processing, Technical Support
+6. Make sure the JSON response contains JSON output only with no additional text or 
+formatting.
+7. To develop an effective prompt template:
+a. You can use the prompt editor and sample messages (located at the end of the 
+document) to create and refine multiple versions of the prompts. You can save these 
+prompts for future reference.
+© Copyright. All rights reserved.
+3
+Unit 1: System-based Assessment
+b. Finally, select the most suitable version for use as the template, feedback-analyzer
+CERT#### version 1.0.0.
+Note:
+You can use the sample messages provided in the Sample Messages section after 
+the practice test description
+Note:
+Click on the top right corner in SAP AI Launchpad to find your unique user id in the 
+form of “CERT####”.
+Example: If your group number is “0123 SAP Learning “ your user id will be 
+“CERT0123”.
+Your template name must include the exact words with your user ID. For example: 
+feedback-analyzer-CERT0123, version 1.0.0, and the variable name 
+user_email_placeholder for this task. Similarly, ensure correct versions for each of 
+the following tasks like 1.1.0, 1.2.0, 2.0.0 etc. as mentioned in the task. Following 
+these instructions correctly is critical for you to pass the certification.
+Ensure that you save the prompt template with proper name and version number.
+Expected outcome: A new prompt template with the name feedback-analyzer-CERT####, 
+version 1.0.0 with appropriate prompts in the system and user roles and a variable based on 
+the above instructions.
+Task 1.2: Implement Enterprise-Grade Prompt Hardening (Prompt Template Version 
+1.1.0)
+Update your feedback-analyzer-CERT#### template to version 1.1.0 to implement prompt 
+hardening by adding an “IMPORTANT” section within the System role.
+This section must contain explicit negative instructions that strictly control LLM’s behavior by 
+forbidding actions that would:
+● Compromise its dedicated focus on customer feedback analysis.
+● Lead to the unnecessary disclosure of any customer’s personal data, beyond the 
+Order_Reference_ID or Product_Reference fields explicitly required in the JSON output.
+● Result in a response that is not clean, parseable JSON, or unsuitable for automated 
+systems.
+Expected outcome: The updated prompt template with similar name feedback-analyzer
+CERT####, and a new version 1.1.0 with an additional section for prompt hardening based on 
+the above instructions.
+Task 1.3: Capture the Baseline Output for Evolution (Prompt Template Version 1.2.0)
+Run your feedback-analyzer-CERT#### template (version 1.1.0) in the Prompt Editor using 
+the following sample customer email in the user_email_placeholder variable.
+© Copyright. All rights reserved.
+4
+Task 1: Designing an Initial Prompt and Structuring for Core Feedback Insights (Estimated Time: 25 minutes)
+Hint:
+You can use any model of your choice while executing your template in this task 
+and all other remaining tasks. In case a particular model is not working, select 
+another model and continue.
+Once the JSON response is generated, copy the JSON output and paste it into the Assistant 
+role of your template and save it to version 1.2.0. This will serve as a baseline to track how 
+your solution improves.
+Note:
+When copying the response for this and all subsequent tasks, you can either select 
+the text manually or use the copy button in the interface. Both methods provide 
+the JSON format required for the next steps.
+Subject: My recent order #GGX56789 - missing item
+Hi,
+I received my order #GGX56789 today, but the 'Wireless Headphones' 
+listed on the invoice were not in the box. I am very frustrated as I 
+needed them for a trip this weekend. Please send the missing item or 
+issue a refund immediately. This is unacceptable.
+Note:
+In case you are unable to execute the prompt due to a greyed out Run button, click 
+all the input fields (system, user, and variable fields) and check again. You can also 
+try using another model to execute the prompt.
+Expected outcome: The updated prompt template with a similar name feedback-analyzer
+CERT####, and a new version 1.2.0 with an additional Assistant role, based on the above 
+instructions
